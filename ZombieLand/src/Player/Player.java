@@ -3,11 +3,16 @@ package Player;
 import java.awt.Point;
 
 /**
- * this Class represents the Player in Zombieland game
+ * This Class represents the Player in Zombieland game
  * @author Timo
  *
  */
 public class Player {
+	
+	/**
+	 * Constant experience Multiplier per Level
+	 */
+	private static final int levelMultiplier = 1000;
 	
 	/**
 	 * name of Player
@@ -45,6 +50,16 @@ public class Player {
 	private int level;
 	
 	/**
+	 * experience of Player
+	 */
+	private int experience;
+	
+	/**
+	 * skillPoints of Player
+	 */
+	private int skillPoints;
+	
+	/**
 	 * Inventory of Player
 	 */
 	private Inventory inventory = new Inventory();
@@ -62,9 +77,12 @@ public class Player {
 		this.name = name;
 	}
 	
+	/**
+	 * raise level of Player and add Skillpoints
+	 */
 	public void levelUp(){
 		level++;
-		//levelUp--> stats increment or call level up method of character
+		skillPoints += 5;
 	}
 	
 	public String getName(){
@@ -121,5 +139,25 @@ public class Player {
 
 	public Equipment getEquipment() {
 		return equipment;
+	}
+
+	public int getExperience() {
+		return experience;
+	}
+
+	/**
+	 * get new experience and check if level up
+	 * @param add experience to add
+	 */
+	public void raiseExperience(int add) {
+		experience += add;
+		while (experience >= level * levelMultiplier){
+			levelUp();
+			experience -= level * levelMultiplier;
+		}
+	}
+
+	public int getSkillPoints() {
+		return skillPoints;
 	}
 }
