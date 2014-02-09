@@ -13,11 +13,6 @@ import controller.Keyboard;
 public class Screen extends JFrame{
 	
 	/**
- 	 * test 
-	 */
-	private int x = 0;
-	
-	/**
 	 * Default serial Version ID
 	 */
 	private static final long serialVersionUID = 1L;
