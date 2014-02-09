@@ -11,6 +11,12 @@ import javax.swing.JFrame;
 import controller.Keyboard;
 
 public class Screen extends JFrame{
+	
+	/**
+	 * testing variable
+	 */
+	int x = 0;
+		
 	/**
 	 * Default serial Version ID
 	 */
@@ -63,8 +69,9 @@ public class Screen extends JFrame{
 	public void repaintScreen(){
 		Graphics g = strat.getDrawGraphics();
 		//draw begins
-		g.drawImage(background, 10, 10, null);
 		
+		g.drawImage(background, x, x, null);
+		x+=5;
 		//draw ends
 		g.dispose();
 		strat.show();
