@@ -1,11 +1,6 @@
 package Player;
 
-public class Charakter implements Player{
+public interface Charakter{
 
-	@Override
-	public String getName() {
-		// TODO Auto-generated method stub
-		return name;
-	}
-
+	
 }

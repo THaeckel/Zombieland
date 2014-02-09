@@ -1,5 +1,5 @@
 package Player;
 
-public class Archer extends Charakter{
+public class Archer implements Charakter{
 
 }

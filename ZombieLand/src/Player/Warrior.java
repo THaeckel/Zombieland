@@ -1,5 +1,5 @@
 package Player;
 
-public class Warrior extends Charakter{
+public class Warrior implements Charakter{
 
 }
