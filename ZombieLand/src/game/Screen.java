@@ -13,7 +13,7 @@ import controller.Keyboard;
 public class Screen extends JFrame{
 	
 	/**
-	 * test 
+ 	 * test 
 	 */
 	private int x = 0;
 	
@@ -69,7 +69,6 @@ public class Screen extends JFrame{
 		//draw begins
 		
 		g.drawImage(background, 0, 0, null);
-		x+=5;
 		//draw ends
 		g.dispose();
 		strat.show();
