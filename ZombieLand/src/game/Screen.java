@@ -47,8 +47,6 @@ public class Screen extends JFrame{
 		}catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-		
 	}
 	
 	/**
