@@ -12,11 +12,7 @@ import controller.Keyboard;
 
 public class Screen extends JFrame{
 	
-	/**
-	 * testing variable
-	 */
-	int x = 0;
-		
+
 	/**
 	 * Default serial Version ID
 	 */
@@ -70,8 +66,7 @@ public class Screen extends JFrame{
 		Graphics g = strat.getDrawGraphics();
 		//draw begins
 		
-		g.drawImage(background, x, x, null);
-		x+=5;
+		g.drawImage(background, 0, 0, null);
 		//draw ends
 		g.dispose();
 		strat.show();
