@@ -63,7 +63,6 @@ public class Screen extends JFrame{
 		Graphics g = strat.getDrawGraphics();
 		//draw begins
 		
-		g.drawImage(background, 100, 100, null);
 		g.drawImage(background, 0, 0, null);
 		//draw ends
 		g.dispose();
