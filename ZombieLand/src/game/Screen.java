@@ -13,11 +13,6 @@ import controller.Keyboard;
 public class Screen extends JFrame{
 	
 	/**
-	 * test 
-	 */
-	private int x = 0;
-	
-	/**
 	 * Default serial Version ID
 	 */
 	private static final long serialVersionUID = 1L;
@@ -51,8 +46,6 @@ public class Screen extends JFrame{
 		}catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-		
 	}
 	
 	/**
@@ -71,6 +64,7 @@ public class Screen extends JFrame{
 		//draw begins
 		
 		g.drawImage(background, 100, 100, null);
+		g.drawImage(background, 0, 0, null);
 		//draw ends
 		g.dispose();
 		strat.show();
