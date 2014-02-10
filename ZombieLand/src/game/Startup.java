@@ -33,14 +33,17 @@ public class Startup {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-
+		
 		//creates a new gamescreen
 		Screen screen = new Screen(1920,1080);
-
-		MainMenu mainmenu = new MainMenu(screen);
-		
 		
 //		new Intro();
+	
+
+//		MainMenu mainmenu = new MainMenu(screen);
+		
+		
+
 		
 		
 		
