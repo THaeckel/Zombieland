@@ -68,6 +68,8 @@ public class Startup {
 			
 			
 			screen.repaintScreen();
+			
+			
 			/*reduces the speed of the loop otherwise this will
 			 * will fill up the hole CPU speed
 			 */
