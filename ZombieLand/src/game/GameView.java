@@ -1,8 +1,11 @@
 package game;
 
+import java.awt.Point;
 import java.awt.event.KeyEvent;
 
+import controller.ControlPlayer;
 import controller.Keyboard;
+import entity.Player;
 
 public class GameView {
 
@@ -26,12 +29,23 @@ public class GameView {
 	 * screen objectvariable
 	 */
 	private Screen screen;
+	
+	/**
+	 * Controller for Playerchanges
+	 */
+	private ControlPlayer controlPlayer;
+	
+	/**
+	 * Player which is handle by this controler
+	 */
+	private Player player;
 
 	/**
 	 * Construktor
 	 */
 	public GameView() {
 		gameloop();
+		controlPlayer = new ControlPlayer(player);
 	}
 
 	/**
@@ -40,7 +54,11 @@ public class GameView {
 	private void gameloop() {
 		// creates a new gamescreen
 		screen = new Screen(1920, 1080);
-
+		
+		// create default Player
+		//Player (name, position, health, wisdom, agility, strength)
+		player = new Player("Timo Wurst", new Point(100,100), 100, 10, 10,10);
+		
 		/* ********************** gameloop **************************** */
 		/**
 		 * Game-Loop permanetly repaint the screen as (fps is one round from
@@ -49,7 +67,7 @@ public class GameView {
 		while (true) {
 			// calculate the speedmultiplier
 			thisFrame = System.currentTimeMillis();
-			// timeSinceLastFrame = ((float) (thisFrame - lastFrame)) / 1000f;
+			timeSinceLastFrame = ((float) (thisFrame - lastFrame)) / 1000f;
 			lastFrame = thisFrame;
 
 			// test changes by Player,enemy,map and so on
@@ -58,7 +76,7 @@ public class GameView {
 			// render the changes to the screen
 			render();
 
-			// exit fullscreen mode with esc Key
+			// exit game with esc Key
 			if (Keyboard.isKeyDown(KeyEvent.VK_ESCAPE)) {
 				System.exit(0);
 			}
@@ -69,7 +87,7 @@ public class GameView {
 	 * this method calculates the changes whitin one frame
 	 */
 	public void makeChanges(float timeSinceLastFrame) {
-		// TODO
+		controlPlayer.updatePlayer(timeSinceLastFrame);
 	}
 
 	/**

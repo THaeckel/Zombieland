@@ -12,6 +12,7 @@ import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 
 import controller.Keyboard;
+import entity.Player;
 
 public class Screen extends JFrame{
 	
@@ -29,6 +30,11 @@ public class Screen extends JFrame{
 	 * for the canvas enxtendet container
 	 */
 	private BufferStrategy strat;
+	
+	/**
+	 * Player wchich where uptatet
+	 */
+	private Player player;
 
 	/**
 	 * Contruktor creates the GUI for the game
@@ -37,7 +43,7 @@ public class Screen extends JFrame{
 	 * @param width	from the screen
 	 * @param height from the screen
 	 */
-	public Screen(int width, int height) {
+	public Screen(Player player,int width, int height) {
 		setTitle("Zombieland");
 		setSize(width, height);
 		addKeyListener(new Keyboard());
