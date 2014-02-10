@@ -79,4 +79,9 @@ public class Player extends Entity{
 	public int getSkillPoints() {
 		return skillPoints;
 	}
+	
+	public void update(float timeSinceLastFrame) {
+		// TODO Auto-generated method stub
+		
+	}
 }
