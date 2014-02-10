@@ -68,5 +68,4 @@ public class Screen extends JFrame{
 		g.dispose();
 		strat.show();
 	}
-
 }
