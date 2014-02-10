@@ -7,7 +7,7 @@ import java.awt.Point;
  * @author Timo
  *
  */
-public class Player {
+public class Player extends Entity{
 	
 	/**
 	 * Constant experience Multiplier per Level
@@ -15,155 +15,53 @@ public class Player {
 	private static final int levelMultiplier = 1000;
 	
 	/**
-	 * name of Player
-	 */
-	private final String name;
-	
-	/**
-	 * Player position
-	 */
-	private Point position;
-	
-	/**
-	 * health points of the Player
-	 */
-	private int healthPoints;
-	
-	/**
-	 * strength of Player
-	 */
-	private int strength;
-	
-	/**
-	 * agility of Player
-	 */
-	private int agility;
-	
-	/**
-	 * wisdom of Player
-	 */
-	private int wisdom;
-	
-	/**
-	 * level of Player
-	 */
-	private int level = 1;
-	
-	/**
-	 * experience of Player
-	 */
-	private int experience = 0;
-	
-	/**
 	 * skillPoints of Player
 	 */
 	private int skillPoints = 0;
 	
 	/**
-	 * Inventory of Player
-	 */
-	private Inventory inventory = new Inventory();
-	
-	/**
-	 * Equipment of Player
-	 */
-	private Equipment equipment = new Equipment();
-	
-	/**
 	 * Constructor
-	 * @param name --> Player name
+	 * @param name to set in Entity
+	 * @param position to set in Entity
+	 * @param health to set in Entity
+	 * @param wisdom to set in Entity
+	 * @param agility to set in Entity
+	 * @param strength to set in Entity
 	 */
 	public Player (String name, Point position, int health, int wisdom, int agility, int strength){
-		this.name = name;
-		this.position = position;
-		this.agility = agility;
-		this.wisdom = wisdom;
-		this.healthPoints = health;
-		this.strength = strength;
+		super (name,1, position, health, wisdom, agility, strength);
 	}
 	
 	/**
 	 * raise level of Player and add Skillpoints
 	 */
 	public void levelUp(){
-		level++;
+		setLevel(getLevel() + 1);
 		skillPoints += 5;
 	}
 	
-	public String getName(){
-		return name;
-	}
-
-	public Point getPosition() {
-		return position;
-	}
-
-	public void setPosition(Point position) {
-		this.position = position;
-	}
-
-	public int getHealthPoints() {
-		return healthPoints;
-	}
-
-	/**
-	 * add value to current HP
-	 * @param value - value to add to HP
-	 */
-	public void raiseHealthPoints(int value) {
-		healthPoints += value;
-	}
-
-	public int getStrength() {
-		return strength;
-	}
-
 	/**
 	 * add value to current Strength
 	 * @param value - value to add to Strength
 	 */
 	public void raiseStrength(int value) {
-		strength += value;
+		setStrength(getStrength() + value);
 	}
 
-	public int getAgility() {
-		return agility;
-	}
-	
 	/**
 	 * add value to current Agility
 	 * @param value - value to add to Agility
 	 */
 	public void raiseAgility(int value) {
-		agility += value;
+		setAgility(getAgility() + value);
 	}
 
-	public int getWisdom() {
-		return wisdom;
-	}
-	
 	/**
 	 * add value to current Wisdom
 	 * @param value - value to add to Wisdom
 	 */
 	public void raiseWisdom(int value) {
-		wisdom += value;
-	}
-
-	public int getLevel() {
-		return level;
-	}
-
-	public Inventory getInventory() {
-		return inventory;
-	}
-
-	public Equipment getEquipment() {
-		return equipment;
-	}
-
-	public int getExperience() {
-		return experience;
+		setWisdom (getWisdom() + value);
 	}
 
 	/**
@@ -171,10 +69,10 @@ public class Player {
 	 * @param add experience to add
 	 */
 	public void raiseExperience(int add) {
-		experience += add;
-		while (experience >= level * levelMultiplier){
+		setExperience(getExperience() + add);
+		while (getExperience() >= getLevel() * levelMultiplier){
 			levelUp();
-			experience -= level * levelMultiplier;
+			setExperience(getExperience()-getLevel() * levelMultiplier); 
 		}
 	}
 
