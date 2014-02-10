@@ -1,5 +1,7 @@
 package game;
 
+import java.awt.BorderLayout;
+
 /**
  * this class represent the mainmenu
  * @author Mikko Eberhardt
@@ -17,6 +19,7 @@ public class MainMenu {
 	 */
 	public MainMenu (Screen screen){
 		this.screen=screen;
+		screen.setLayout(new BorderLayout());
 		
 	}
 

@@ -1,5 +1,9 @@
 package game;
 
+import java.awt.event.KeyEvent;
+
+import controller.Keyboard;
+
 
 /**
  * this class initialize the window and runs the main menu
@@ -60,6 +64,9 @@ public class Startup {
 			timeSinceLastFrame = ((float) (thisFrame - lastFrame)) / 1000f;
 			lastFrame = thisFrame;
 			
+			
+			
+			
 			screen.repaintScreen();
 			/*reduces the speed of the loop otherwise this will
 			 * will fill up the hole CPU speed
@@ -68,6 +75,9 @@ public class Startup {
 				Thread.sleep(11);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
+			}
+			if(Keyboard.isKeyDown(KeyEvent.VK_ESCAPE)){
+				System.exit(0);				
 			}
 			
 		}

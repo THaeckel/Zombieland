@@ -1,7 +1,9 @@
 package game;
 
-import java.awt.BorderLayout;
+import java.awt.DisplayMode;
 import java.awt.Graphics;
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -40,8 +42,16 @@ public class Screen extends JFrame{
 		setSize(width, height);
 		addKeyListener(new Keyboard());
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setVisible(true);
-		setLayout(new BorderLayout());
+		setUndecorated(true);
+//		setVisible(true);
+		
+		//Vollbild
+		DisplayMode displayMode = new DisplayMode(width, height, 16, 60);// 8 15 16 24 32  
+        GraphicsEnvironment environment = GraphicsEnvironment.getLocalGraphicsEnvironment();
+        GraphicsDevice device = environment.getDefaultScreenDevice();
+        device.setFullScreenWindow(this);
+        device.setDisplayMode(displayMode);
+		
 		makeStrat();
 		try{
 			background = ImageIO.read(Screen.class.getResource("/Background.png"));
@@ -65,7 +75,7 @@ public class Screen extends JFrame{
 		Graphics g = strat.getDrawGraphics();
 		//draw begins
 		
-		g.drawImage(background, 0, 0, null);
+		g.drawImage(background, 0, 0, this.getWidth(), this.getHeight(), null);
 		//draw ends
 		g.dispose();
 		strat.show();
