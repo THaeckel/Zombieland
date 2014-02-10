@@ -1,4 +1,4 @@
-package Player;
+package entity;
 
 import Item.*;
 
