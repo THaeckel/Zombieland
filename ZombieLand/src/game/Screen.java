@@ -1,5 +1,6 @@
 package game;
 
+import java.awt.BorderLayout;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
@@ -40,6 +41,7 @@ public class Screen extends JFrame{
 		addKeyListener(new Keyboard());
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
+		setLayout(new BorderLayout());
 		makeStrat();
 		try{
 			background = ImageIO.read(Screen.class.getResource("/Background.png"));
@@ -47,7 +49,7 @@ public class Screen extends JFrame{
 			e.printStackTrace();
 		}
 	}
-	
+
 	/**
 	 * this methos create the BuffereStrategy for the GUI
 	 */
@@ -57,7 +59,7 @@ public class Screen extends JFrame{
 	}
 	
 	/**
-	 * this method draws the game on th screen
+	 * this method draws the game on the screen
 	 */
 	public void repaintScreen(){
 		Graphics g = strat.getDrawGraphics();
