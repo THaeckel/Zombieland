@@ -25,7 +25,7 @@ public class Player {
 	private Point position;
 	
 	/**
-	 * healthpoints of the Player
+	 * health points of the Player
 	 */
 	private int healthPoints;
 	
@@ -47,17 +47,17 @@ public class Player {
 	/**
 	 * level of Player
 	 */
-	private int level;
+	private int level = 1;
 	
 	/**
 	 * experience of Player
 	 */
-	private int experience;
+	private int experience = 0;
 	
 	/**
 	 * skillPoints of Player
 	 */
-	private int skillPoints;
+	private int skillPoints = 0;
 	
 	/**
 	 * Inventory of Player
@@ -73,8 +73,13 @@ public class Player {
 	 * Constructor
 	 * @param name --> Player name
 	 */
-	public Player (String name){
+	public Player (String name, Point position, int health, int wisdom, int agility, int strength){
 		this.name = name;
+		this.position = position;
+		this.agility = agility;
+		this.wisdom = wisdom;
+		this.healthPoints = health;
+		this.strength = strength;
 	}
 	
 	/**
@@ -101,32 +106,48 @@ public class Player {
 		return healthPoints;
 	}
 
-	public void setHealthPoints(int healthPoints) {
-		this.healthPoints = healthPoints;
+	/**
+	 * add value to current HP
+	 * @param value - value to add to HP
+	 */
+	public void raiseHealthPoints(int value) {
+		healthPoints += value;
 	}
 
 	public int getStrength() {
 		return strength;
 	}
 
-	public void setStrength(int strength) {
-		this.strength = strength;
+	/**
+	 * add value to current Strength
+	 * @param value - value to add to Strength
+	 */
+	public void raiseStrength(int value) {
+		strength += value;
 	}
 
 	public int getAgility() {
 		return agility;
 	}
-
-	public void setAgility(int agility) {
-		this.agility = agility;
+	
+	/**
+	 * add value to current Agility
+	 * @param value - value to add to Agility
+	 */
+	public void raiseAgility(int value) {
+		agility += value;
 	}
 
 	public int getWisdom() {
 		return wisdom;
 	}
-
-	public void setWisdom(int wisdom) {
-		this.wisdom = wisdom;
+	
+	/**
+	 * add value to current Wisdom
+	 * @param value - value to add to Wisdom
+	 */
+	public void raiseWisdom(int value) {
+		wisdom += value;
 	}
 
 	public int getLevel() {
