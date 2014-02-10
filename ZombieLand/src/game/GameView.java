@@ -43,21 +43,24 @@ public class GameView {
 	/**
 	 * Construktor
 	 */
-	public GameView() {
-		gameloop();
+	public GameView(Player player) {
+		this.player=player;
 		controlPlayer = new ControlPlayer(player);
+		gameloop();
+		
 	}
 
 	/**
 	 * gameloop which get the changes an display it on the screen
 	 */
 	private void gameloop() {
-		// creates a new gamescreen
-		screen = new Screen(1920, 1080);
 		
-		// create default Player
-		//Player (name, position, health, wisdom, agility, strength)
-		player = new Player("Timo Wurst", new Point(100,100), 100, 10, 10,10);
+		
+		
+		// creates a new gamescreen
+		screen = new Screen(player, 1920, 1080);
+		
+		
 		
 		/* ********************** gameloop **************************** */
 		/**
