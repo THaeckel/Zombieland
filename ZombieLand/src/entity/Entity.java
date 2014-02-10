@@ -145,4 +145,13 @@ public class Entity {
 	public void setExperience(int exp){
 		experience = exp;
 	}
+	
+	/**
+	 * suffering damage
+	 * @param damage value to subtract from healthpoints
+	 */
+		public void sufferDamage(int damage){
+		healthPoints -= damage;
+	}
+	
 }
