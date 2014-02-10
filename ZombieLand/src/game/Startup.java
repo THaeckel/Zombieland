@@ -27,13 +27,7 @@ public class Startup {
 	 * so it doesnt mater how fast your cpu the player runs with the same speed
 	 */
 	public static float timeSinceLastFrame;
-	
-	
 
-	
-	
-	
-	
 	/** 
 	 * the entry point for the game
 	 * @param args
@@ -43,10 +37,10 @@ public class Startup {
 		//creates a new gamescreen
 		Screen screen = new Screen(1920,1080);
 
-		/*MainMenu mainmenu = */new MainMenu(screen);
+		MainMenu mainmenu = new MainMenu(screen);
 		
 		
-		
+//		new Intro();
 		
 		
 		
@@ -78,6 +72,10 @@ public class Startup {
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
+			
+			/**
+			 * reacts on pressing esc to exit the programm
+			 */
 			if(Keyboard.isKeyDown(KeyEvent.VK_ESCAPE)){
 				System.exit(0);				
 			}
