@@ -17,7 +17,7 @@ public class Inventory {
 	/**
 	 * item List represents the Inventory
 	 */
-	private List<ItemStack> items = new ArrayList<ItemStack>();
+	private List<ItemStack> items = new ArrayList<ItemStack>();//besser Selbstverwaltete Liste!!!! 
 	/**
 	 * maximum Items could be added
 	 */
@@ -44,14 +44,18 @@ public class Inventory {
 	public void setMaxItems(int maxItems) {
 		this.maxItems = maxItems;
 	}
-/*	
+
+	/**
+	 * adds ItemStack to list if found fitting ItemStack add them together and return rest
+	 * @param itemStack 
+	 * @return ItemStack with overflowed Items
+	 */
 	public ItemStack addItemStack (ItemStack itemStack){
 		
 		if (itemStack != null){
 			int position = items.indexOf(itemStack);
 			if (position >= 0){
-				if (items.get(position).add()) {
-				}
+				itemStack.setNumber(items.get(position).add(itemStack.getNumber()));
 				
 			} else {
 				if (items.size() <= maxItems) {
@@ -60,7 +64,7 @@ public class Inventory {
 			}
 		}		
 		return itemStack;
-	}*/
+	}
 	
 	/**
 	 * adds Item to list creates new ItemStack if items not already in
@@ -70,16 +74,8 @@ public class Inventory {
 	public boolean addItem(Item item) {
 		boolean added = false;
 		if (item != null) {
-			int position = items.indexOf(item);
-			if (position >= 0) {
-				if (items.get(position).add()) {
-					added = true;
-				}
-			} else {
-				if (items.size() <= maxItems) {
-					items.add(new ItemStack(item,1));
-					added = true;
-				}
+			if(addItemStack(new ItemStack(item,1)).getNumber() == 0){
+				added = true;
 			}
 		}
 		return added;
