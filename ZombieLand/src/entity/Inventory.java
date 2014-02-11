@@ -20,6 +20,11 @@ public class Inventory {
 	private List<ItemStack> items = new ArrayList<ItemStack>();
 
 	/**
+	 * 
+	 */
+	private int maxItems = 100;
+	
+	/**
 	 * @return the items
 	 */
 	public List<ItemStack> getItems() {
@@ -52,5 +57,28 @@ public class Inventory {
 		if (item != null) {
 			addItemStack(new ItemStack(item, 1));
 		}
+	}
+
+	/**
+	 * @return the maxItems
+	 */
+	public int getMaxItems() {
+		return maxItems;
+	}
+
+	/**
+	 * raise the MaxItems number
+	 * @param maxItems the maxItems to add
+	 */
+	public void raiseMaxItems(int addItems) {
+		maxItems += addItems;
+	}
+	
+	/**
+	 * reduce the MaxItems number
+	 * @param maxItems the maxItems to subtract
+	 */
+	public void reduceMaxItems(int subItems) {
+		maxItems -= subItems;
 	}
 }
