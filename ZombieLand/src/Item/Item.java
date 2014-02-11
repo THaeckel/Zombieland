@@ -11,23 +11,12 @@ public class Item {
 	 * name of Item
 	 */
 	private String name;
-	/**
-	 * maximum Stackable Items
-	 */
-	private int maxStackable;
-
+	
 	/**
 	 * @return the name
 	 */
 	public String getName() {
 		return name;
-	}
-
-	/**
-	 * @return the maxStackable
-	 */
-	public int getMaxStackable() {
-		return maxStackable;
 	}
 
 	@Override
@@ -46,5 +35,4 @@ public class Item {
 		}
 		return equal;
 	}
-
 }
