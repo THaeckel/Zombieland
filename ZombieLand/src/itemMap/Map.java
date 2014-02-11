@@ -9,7 +9,10 @@ import item.Stackable;
  */
 public class Map extends Item implements Stackable {
 
-	private String sourceFile = "";
+	/**
+	 * Sourcefile of the map
+	 */
+	private String sourceFile;
 	
 	public Map(String name, String sourceFile) {
 		super(name);
