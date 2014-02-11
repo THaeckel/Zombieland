@@ -56,7 +56,6 @@ public class Inventory {
 			int position = items.indexOf(itemStack);
 			if (position >= 0){
 				itemStack.setNumber(items.get(position).add(itemStack.getNumber()));
-				
 			} else {
 				if (items.size() <= maxItems) {
 					items.add(itemStack);
