@@ -1,4 +1,7 @@
-package Item;
+package Plant;
+
+import Item.Item;
+import Item.Stackable;
 
 public class Plant extends Item implements Stackable{
 

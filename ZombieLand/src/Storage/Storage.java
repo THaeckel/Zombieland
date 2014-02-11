@@ -1,4 +1,7 @@
-package Item;
+package Storage;
+
+import Item.Equipable;
+import Item.Item;
 
 public class Storage extends Item implements Equipable{
 	/**

@@ -1,4 +1,4 @@
-package Item;
+package Weapon;
 
 public class DistanceCombatWeapon extends Weapon {
 

@@ -1,5 +1,11 @@
 package Item;
 
+import Weapon.CloseCombatWeapon;
+import Weapon.DistanceCombatWeapon;
+import Accessoire.Amulet;
+import Accessoire.Ring;
+import Armor.Armor;
+
 
 /**
  * Equipment of Entity

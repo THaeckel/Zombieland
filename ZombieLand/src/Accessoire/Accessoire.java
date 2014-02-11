@@ -1,4 +1,7 @@
-package Item;
+package Accessoire;
+
+import Item.Equipable;
+import Item.Item;
 
 public class Accessoire extends Item implements Equipable{
 
