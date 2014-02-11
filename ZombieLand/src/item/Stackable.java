@@ -1,4 +1,4 @@
-package Item;
+package item;
 
 /**
  * Stackable to test if item could be stacked 

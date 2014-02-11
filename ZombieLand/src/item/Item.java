@@ -1,4 +1,4 @@
-package Item;
+package item;
 
 /**
  * This class represents an Item in Zombierland

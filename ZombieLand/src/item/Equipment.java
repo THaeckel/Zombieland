@@ -1,10 +1,10 @@
-package Item;
+package item;
 
-import Weapon.CloseCombatWeapon;
-import Weapon.DistanceCombatWeapon;
-import Accessoire.Amulet;
-import Accessoire.Ring;
-import Armor.Armor;
+import itemAccessoire.Amulet;
+import itemAccessoire.Ring;
+import itemArmor.Armor;
+import itemWeapon.CloseCombatWeapon;
+import itemWeapon.DistanceCombatWeapon;
 
 
 /**

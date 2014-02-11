@@ -1,4 +1,4 @@
-package Accessoire;
+package itemAccessoire;
 
 
 public class Ring extends Accessoire{

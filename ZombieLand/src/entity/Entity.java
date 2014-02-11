@@ -1,9 +1,9 @@
 package entity;
 
-import java.awt.Point;
+import item.Equipment;
+import item.Inventory;
 
-import Item.Equipment;
-import Item.Inventory;
+import java.awt.Point;
 
 public class Entity {
 	
