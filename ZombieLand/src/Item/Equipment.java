@@ -1,6 +1,5 @@
-package entity;
+package Item;
 
-import Item.*;
 
 /**
  * Equipment of Entity

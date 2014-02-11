@@ -1,11 +1,7 @@
-package entity;
+package Item;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import Item.Item;
-import Item.ItemStack;
-import Item.Stackable;
 
 /**
  * this Class represents the Inventory of an Entity
