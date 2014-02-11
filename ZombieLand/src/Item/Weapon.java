@@ -2,6 +2,10 @@ package Item;
 
 public class Weapon extends Item implements Equipable{
 
+	public Weapon(String name) {
+		super(name);
+		// TODO Auto-generated constructor stub
+	}
 	/**
 	 * damage Weapon does
 	 */

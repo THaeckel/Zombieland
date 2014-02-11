@@ -10,18 +10,26 @@ public class Item {
 	/**
 	 * name of Item
 	 */
-	private String name;
+	private String NAME;
+	
+	/**
+	 * Constructor
+	 * @param name of Item
+	 */
+	public Item (String name){
+		this.NAME = name;
+	}
 	
 	/**
 	 * @return the name
 	 */
 	public String getName() {
-		return name;
+		return NAME;
 	}
-
+	
 	@Override
 	public String toString() {
-		return name;
+		return NAME;
 	}
 
 	@Override
@@ -29,7 +37,7 @@ public class Item {
 		boolean equal = false;
 		if (obj instanceof Item) {
 			Item item = (Item) obj;
-			if (item.name == this.name) {
+			if (item.NAME == this.NAME) {
 				equal = true;
 			}
 		}
