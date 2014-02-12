@@ -1,8 +1,7 @@
 package item;
 
 /**
- * This class represents an Item in Zombierland
- * 
+ * This class represents an Item in Zombieland
  * @author Timo
  * 
  */
@@ -29,7 +28,7 @@ public class Item {
 	
 	@Override
 	public String toString() {
-		return NAME;
+		return "Item: " + NAME;
 	}
 
 	@Override
