@@ -1,5 +1,10 @@
 package item;
 
+/**
+ * this Class represents a Stack of Items
+ * @author Timo
+ *
+ */
 public class ItemStack {
 
 	/**
@@ -13,28 +18,35 @@ public class ItemStack {
 
 	/**
 	 * Constructor
-	 * @param item to build item stack
-	 *            which is stackable
-	 * @param number only counts if item is stackable
+	 * 
+	 * @param item
+	 *            to build item stack which is stackable
+	 * @param number
+	 *            only counts if item is stackable
 	 */
 	public ItemStack(Item item, int number) {
 		this.item = item;
-		if (item instanceof Stackable) {
-			setNumber(number);
-		} else {
-			number = 1;
-		}
+		setNumber(number);
 	}
 
 	/**
 	 * add more Items to item Stack
+	 * 
 	 * @param value
 	 *            - number of items to add
 	 */
 	public void add(int value) {
-		if (item instanceof Stackable) {
-			number += value;
-		}
+		setNumber(number + value);
+	}
+
+	/**
+	 * remove Items from item Stack
+	 * 
+	 * @param value
+	 *            - number of items to remove
+	 */
+	public void remove(int value) {
+		setNumber(number - value);
 	}
 
 	@Override
@@ -63,8 +75,14 @@ public class ItemStack {
 	 *            the number to set
 	 */
 	public void setNumber(int number) {
-		if (item instanceof Stackable) {
-			this.number = number;
+		if (number >= 1) {
+			if (item instanceof Stackable) {
+				this.number = number;
+			} else {
+				this.number = 1;
+			}
+		} else {
+			this.number = 0;
 		}
 	}
 
@@ -73,5 +91,10 @@ public class ItemStack {
 	 */
 	public Item getItem() {
 		return item;
+	}
+
+	@Override
+	public String toString() {
+		return "ItemStack: (" + item + ", " + number + ")";
 	}
 }
