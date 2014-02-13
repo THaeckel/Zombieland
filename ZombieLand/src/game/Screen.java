@@ -76,7 +76,7 @@ public class Screen extends JFrame{
 	}
 	
 	/**
-	 * this method draws the game on the screen
+	 * this method handle the draw funktion and graphic options
 	 */
 	public void repaintScreen(){
 		Graphics g = strat.getDrawGraphics();
@@ -87,6 +87,10 @@ public class Screen extends JFrame{
 		strat.show();
 	}
 
+	/**
+	 * This methode draw the game on the screen
+	 * @param g is the graphic Object which brings the draw mechanism
+	 */
 	private void draw(Graphics g) {
 		//default backgroun...all times needed
 		g.drawImage(background, 0, 0, this.getWidth(), this.getHeight(), null);
