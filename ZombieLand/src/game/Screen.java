@@ -4,6 +4,7 @@ import java.awt.DisplayMode;
 import java.awt.Graphics;
 import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
+import java.awt.LayoutManager;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -47,10 +48,13 @@ public class Screen extends JFrame{
 		this.player=player;
 		setTitle("Zombieland");
 		setSize(width, height);
+		
+		ChooseLayout layout = new ChooseLayout();
+		setLayout(layout);
+		
 		addKeyListener(new Keyboard());
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setUndecorated(true);
-//		setVisible(true);
 		
 		//Vollbild
 		DisplayMode displayMode = new DisplayMode(width, height, 16, 60);// 8 15 16 24 32  
@@ -66,6 +70,7 @@ public class Screen extends JFrame{
 			e.printStackTrace();
 		}
 	}
+
 
 	/**
 	 * this methos create the BuffereStrategy for the GUI
