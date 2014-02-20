@@ -24,8 +24,9 @@ public class Startup {
 	public static void main(String[] args) {
 		// create default Player
 		// Player (name, position, health, wisdom, agility, strength)
-		player = new Player("Mikko Pimmel", new Point(100, 100), 100, 10, 10, 10);
+		player = new Player("Timo Wurst", new Point(100, 100), 100, 10, 10, 10);
 
+		new MenuView();
 		// creates the new GameView
 		new GameView(player);
 	}
