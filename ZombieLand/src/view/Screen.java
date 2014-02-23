@@ -29,9 +29,19 @@ public class Screen extends JFrame {
 		this.display=display;
 		makeStrat();
 		
-		/**
-		 * gameloop
-		 */
+		gameloop();
+		
+	}
+	
+	public void setDisplay(Display display){
+		this.display=display;
+	}
+	
+	/**
+	 * game loop
+	 */
+	private void gameloop(){
+		
 		while (true){
 			//changes
 			
@@ -45,7 +55,6 @@ public class Screen extends JFrame {
 				e.printStackTrace();
 			}
 		}
-		
 	}
 	
 	/**
