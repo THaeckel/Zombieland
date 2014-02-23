@@ -26,7 +26,6 @@ public class Startup {
 		// Player (name, position, health, wisdom, agility, strength)
 		player = new Player("Timo Wurst", new Point(100, 100), 100, 10, 10, 10);
 
-		new MenuView();
 		// creates the new GameView
 		new GameView(player);
 	}

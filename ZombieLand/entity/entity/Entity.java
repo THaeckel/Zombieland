@@ -92,7 +92,7 @@ public class Entity {
 		this.strength = strength;
 
 		bounding = new Rectangle(getPosition().x, getPosition().y, 13, 23);
-		// spielergröße vorerst fest
+		// spielergröße vorerst fest(13,23)
 	}
 
 	public String getName() {
