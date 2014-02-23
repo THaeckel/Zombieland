@@ -47,9 +47,6 @@ public class ControlPlayer {
 		//west
 		if(Keyboard.isKeyDown(KeyEvent.VK_A)){
 			player.getPosition().x-=SPEED*timeSinceLastFrame;
-		}
-
-		
-		
+		}		
 	}
 }

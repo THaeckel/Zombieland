@@ -15,7 +15,6 @@ public class Startup {
 	 * Player which is given to the view
 	 */
 	private static Player player;
-
 	/**
 	 * the entry point for the game
 	 * 
