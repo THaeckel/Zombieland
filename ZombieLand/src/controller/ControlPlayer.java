@@ -1,5 +1,6 @@
 package controller;
 
+import java.awt.Point;
 import java.awt.event.KeyEvent;
 
 import entity.Player;
@@ -31,22 +32,25 @@ public class ControlPlayer {
 		
 		//north
 		if(Keyboard.isKeyDown(KeyEvent.VK_W)){
-			player.getPosition().y-=SPEED*timeSinceLastFrame;
+			player.setPosition(new Point(player.getPosition().x, (int) (player.getPosition().y-(SPEED*timeSinceLastFrame))));
 		}
 		
 		//south
 		if(Keyboard.isKeyDown(KeyEvent.VK_S)){
-			player.getPosition().y+=SPEED*timeSinceLastFrame;
+			player.setPosition(new Point(player.getPosition().x, (int) (player.getPosition().y+(SPEED*timeSinceLastFrame))));
 		}
 		
 		//east
 		if(Keyboard.isKeyDown(KeyEvent.VK_D)){
-			player.getPosition().x+=SPEED*timeSinceLastFrame;
+			player.setPosition(new Point((int) (player.getPosition().x+(SPEED*timeSinceLastFrame)), (player.getPosition().y)));
 		}
 		
 		//west
 		if(Keyboard.isKeyDown(KeyEvent.VK_A)){
-			player.getPosition().x-=SPEED*timeSinceLastFrame;
-		}		
+			player.setPosition(new Point((int) (player.getPosition().x-(SPEED*timeSinceLastFrame)), (player.getPosition().y)));
+		}
+
+		
+		
 	}
 }

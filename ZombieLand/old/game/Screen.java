@@ -27,6 +27,12 @@ public class Screen extends JFrame{
 	private BufferedImage background = null;
 	
 	/**
+	 * Buffered Image for the map
+	 */
+	private BufferedImage map = null;
+	
+	
+	/**
 	 * for the canvas enxtendet container
 	 */
 	private BufferStrategy strat;
@@ -65,6 +71,7 @@ public class Screen extends JFrame{
 		makeStrat();
 		try{
 			background = ImageIO.read(Screen.class.getResource("/Background.png"));
+			map = ImageIO.read(Screen.class.getResource("/map.png"));
 		}catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -99,8 +106,11 @@ public class Screen extends JFrame{
 		//default backgroun...all times needed
 		g.drawImage(background, 0, 0, this.getWidth(), this.getHeight(), null);
 		
+		//draw map
+		g.drawImage(map, player.getPosition().x, player.getPosition().y, null);
+		
 		//draw player
-		System.out.println(getWidth());
+		
 		g.drawRect(getWidth()/2, getHeight()/2, 15, 15);
 		
 	}
