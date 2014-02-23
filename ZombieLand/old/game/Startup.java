@@ -21,12 +21,12 @@ public class Startup {
 	 * 
 	 * @param args
 	 */
-	public static void main(String[] args) {
+/*	public static void main(String[] args) {
 		// create default Player
 		// Player (name, position, health, wisdom, agility, strength)
 		player = new Player("Timo Wurst", new Point(100, 100), 100, 10, 10, 10);
 
 		// creates the new GameView
 		new GameView(player);
-	}
+	}*/
 }

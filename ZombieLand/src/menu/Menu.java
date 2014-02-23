@@ -2,16 +2,19 @@ package menu;
 
 import game.Screen;
 
-import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
+import javax.swing.JPanel;
 
-import view.Display;
 
-public class Menu implements Display{
+public class Menu extends JPanel {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	/**
 	 * Background for menu
 	 */
@@ -22,16 +25,18 @@ public class Menu implements Display{
 	 */
 	public Menu(){
 		try{
-			menuBackground = ImageIO.read(Screen.class.getResource("/MenuBackground.jpg"));
+			setMenuBackground(ImageIO.read(Screen.class.getResource("/MenuBackground.png")));
 		}catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 
-	@Override
-	public void repaint(Graphics g) {
-		g.drawImage(menuBackground, 0, 0, null);
-		
+	public BufferedImage getMenuBackground() {
+		return menuBackground;
+	}
+
+	public void setMenuBackground(BufferedImage menuBackground) {
+		this.menuBackground = menuBackground;
 	}
 
 }

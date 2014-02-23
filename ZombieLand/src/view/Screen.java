@@ -1,9 +1,12 @@
 package view;
 
-import java.awt.Graphics;
-import java.awt.image.BufferStrategy;
+import java.awt.DisplayMode;
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
 
 import javax.swing.JFrame;
+
+import controller.Keyboard;
 
 public class Screen extends JFrame {
 
@@ -12,57 +15,29 @@ public class Screen extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * for the graphical draw object
-	 */
-	private Graphics g;
+
 	
-	/**
-	 * Object Display
-	 */
-	private Display display;
+	
 	
 	/**
 	 * Construktor
 	 */
-	public Screen(Display display){
-		this.display=display;
-		makeStrat();
+	public Screen(int width, int height){
+		setTitle("Zombieland");
+		setSize(width, height);
+		addKeyListener(new Keyboard());
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setUndecorated(true);
 		
-		gameloop();
-		
+		//Vollbild
+		DisplayMode displayMode = new DisplayMode(width, height, 16, 60);// 8 15 16 24 32  
+        GraphicsEnvironment environment = GraphicsEnvironment.getLocalGraphicsEnvironment();
+        GraphicsDevice device = environment.getDefaultScreenDevice();
+        device.setFullScreenWindow(this);
+        device.setDisplayMode(displayMode);
+
 	}
 	
-	public void setDisplay(Display display){
-		this.display=display;
-	}
 	
-	/**
-	 * game loop
-	 */
-	private void gameloop(){
-		
-		while (true){
-			//changes
-			
-			//repaint
-			display.repaint(g);
-			
-			try {
-				Thread.sleep(16);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-	}
 	
-	/**
-	 * this methos create the BuffereStrategy for the GUI
-	 */
-	public void makeStrat() {
-		createBufferStrategy(2);
-		BufferStrategy strat = getBufferStrategy();
-		g = strat.getDrawGraphics();		
-	}
 }
