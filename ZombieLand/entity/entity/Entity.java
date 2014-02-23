@@ -1,8 +1,5 @@
 package entity;
 
-import item.Equipment;
-import item.Inventory;
-
 import java.awt.Point;
 import java.awt.Rectangle;
 

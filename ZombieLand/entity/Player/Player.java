@@ -1,6 +1,8 @@
-package entity;
+package Player;
 
 import java.awt.Point;
+
+import entity.Entity;
 
 /**
  * This Class represents the Player in Zombieland game

@@ -11,8 +11,8 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 
+import Player.Player;
 import controller.Keyboard;
-import entity.Player;
 
 public class Screen extends JFrame{
 	

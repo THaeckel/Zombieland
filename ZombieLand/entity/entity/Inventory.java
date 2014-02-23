@@ -1,4 +1,8 @@
-package item;
+package entity;
+
+import item.Item;
+import item.ItemStack;
+import item.Stackable;
 
 import java.util.ArrayList;
 import java.util.List;

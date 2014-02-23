@@ -1,5 +1,6 @@
-package item;
+package entity;
 
+import item.UsableItem;
 import itemAccessoire.Amulet;
 import itemAccessoire.Ring;
 import itemArmor.Armor;

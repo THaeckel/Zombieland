@@ -2,9 +2,9 @@ package game;
 
 import java.awt.event.KeyEvent;
 
+import Player.Player;
 import controller.ControlPlayer;
 import controller.Keyboard;
-import entity.Player;
 
 public class GameView {
 

@@ -2,7 +2,7 @@ package game;
 
 import java.awt.Point;
 
-import entity.Player;
+import Player.Player;
 
 /**
  * this class initialize the window and runs the main menu

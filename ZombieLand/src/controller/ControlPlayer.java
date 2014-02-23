@@ -3,7 +3,7 @@ package controller;
 import java.awt.Point;
 import java.awt.event.KeyEvent;
 
-import entity.Player;
+import Player.Player;
 
 /**
  * this class handle the changes of the Player
