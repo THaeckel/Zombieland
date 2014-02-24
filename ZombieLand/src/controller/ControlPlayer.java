@@ -2,7 +2,7 @@ package controller;
 
 import java.awt.event.KeyEvent;
 
-import Player.Player;
+import player.Player;
 
 /**
  * this class handle the changes of the Player

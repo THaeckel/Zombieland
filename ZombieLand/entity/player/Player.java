@@ -1,4 +1,4 @@
-package Player;
+package player;
 
 import java.awt.Point;
 
@@ -30,8 +30,8 @@ public class Player extends Entity{
 	 * @param agility to set in Entity
 	 * @param strength to set in Entity
 	 */
-	public Player (String name, Point position, int health, int wisdom, int agility, int strength){
-		super (name,1, position, health, wisdom, agility, strength);
+	public Player (String name, Point position, int health, int wisdom, int agility, int strength, int experience){
+		super (name,1, position, health, wisdom, agility, strength, experience);
 	}
 	
 	/**
