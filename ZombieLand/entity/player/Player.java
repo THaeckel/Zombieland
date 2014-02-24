@@ -5,7 +5,7 @@ import java.awt.Point;
 import entity.Entity;
 
 /**
- * This Class represents the Player in Zombieland game
+ * This Class represents the Player in game
  * @author Timo
  *
  */
