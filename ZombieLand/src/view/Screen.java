@@ -25,6 +25,7 @@ public class Screen extends JFrame {
 	 * Buffered Image for the background and Player
 	 */
 	private BufferedImage background = null;
+	private BufferedImage map = null;
 	private BufferedImage playerBild = null;
 
 	/**
@@ -61,7 +62,8 @@ public class Screen extends JFrame {
 
 		makeStrat();
 		try {
-			background = ImageIO.read(Screen.class.getResource("/MenuBackground.jpg"));
+			background = ImageIO.read(Screen.class.getResource("/Background.png"));
+			map = ImageIO.read(Screen.class.getResource("/MenuBackground.jpg"));
 			playerBild = ImageIO.read(Screen.class.getResource("/Jeff.png"));
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -97,12 +99,13 @@ public class Screen extends JFrame {
 	 */
 	private void draw(Graphics g) {
 		// default backgroun...all times needed
-		g.drawImage(background, 0, 0, this.getWidth(), this.getHeight(), null);
+		g.drawImage(background, 0, 0, null);
 
 		// draw map
-
+		g.drawImage(map, player.getPosition().x, player.getPosition().y, this.getWidth(), this.getHeight(), null);
+		
 		// draw player
-		g.drawImage(playerBild, getWidth() / 2, getHeight() / 2, null);
+		g.drawImage(playerBild, getWidth() / 2-20, getHeight() / 2-35, 39, 69,  null);
 		
 
 	}

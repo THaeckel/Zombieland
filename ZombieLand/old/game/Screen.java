@@ -54,8 +54,6 @@ public class Screen extends JFrame{
 		setTitle("Zombieland");
 		setSize(width, height);
 		
-		ChooseLayout layout = new ChooseLayout();
-		setLayout(layout);
 		
 		addKeyListener(new Keyboard());
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
