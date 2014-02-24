@@ -1,6 +1,7 @@
 package controller;
 
 import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 import view.Screen;
 import Player.Player;
@@ -36,7 +37,7 @@ public class Game {
 	/**
 	 * Enum to switch between screens
 	 */
-	public GameState state;
+	public static GameState state;
 
 	/**
 	 * player container
@@ -64,7 +65,7 @@ public class Game {
 			thisFrame = System.currentTimeMillis();
 			timeSinceLastFrame = ((float) (thisFrame - lastFrame)) / 1000f;
 			lastFrame = thisFrame;
-			
+
 			// changes
 			makeChanges();
 
@@ -83,6 +84,8 @@ public class Game {
 		case game:
 			controlPlayer.updatePlayer(timeSinceLastFrame);
 			break;
+		case travel:
+			break;
 		default:
 			break;
 		}
@@ -93,22 +96,29 @@ public class Game {
 	 * render the changes to the screen
 	 */
 	private void render() {
-		switch (state) {
-		case game:
-				screen.repaintScreen();
-				break;
-		default:
-			break;
-		}
-
+		screen.repaintScreen();
 	}
 
 	/**
 	 * ths methode handle the shortCuts for map etc
 	 */
 	private void shortCuts() {
-		if (Keyboard.isKeyDown(KeyEvent.VK_ESCAPE)) {
-			System.exit(0);
+		switch (state) {
+		case game:
+			if (Keyboard.isKeyDown(KeyEvent.VK_ESCAPE)) {
+				System.exit(0);
+			}
+			if (Keyboard.isKeyDown(KeyEvent.VK_M)){
+				state=GameState.travel;
+			}
+			break;
+		case travel:
+			if (Keyboard.isKeyDown(KeyEvent.VK_M)){
+				state=GameState.game;
+			}
+			break;
+		default:
+			break;
 		}
 
 	}
@@ -119,7 +129,7 @@ public class Game {
 	 * @author Mikko Eberhardt
 	 * 
 	 */
-	public enum GameState {
+	public static enum GameState {
 		game, map, travel;
 	}
 

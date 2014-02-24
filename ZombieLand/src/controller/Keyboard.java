@@ -29,6 +29,7 @@ public class Keyboard implements KeyListener {
 	 * Method to test key is down from an Key Event type.
 	 * Set key true if pressed
 	 */
+	@Override
 	public void keyPressed(KeyEvent e) {
 		int keyCode = e.getKeyCode();
 		if ((keyCode >= 0) && (keyCode < keys.length))
@@ -45,8 +46,12 @@ public class Keyboard implements KeyListener {
 		if ((keyCode >= 0) && (keyCode < keys.length))
 			keys[keyCode] = false;
 	}
-
 	// Unnötig
+
+	@Override
 	public void keyTyped(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
+	
 }
