@@ -2,8 +2,8 @@ package controller;
 
 import java.awt.event.KeyEvent;
 
+import player.Player;
 import view.Screen;
-import Player.Player;
 
 public class Game {
 

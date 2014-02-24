@@ -48,7 +48,7 @@ public class Entity {
 	/**
 	 * experience of Entity
 	 */
-	private int experience = 0;
+	private int experience;
 
 	/**
 	 * Inventory of Entity
@@ -84,7 +84,7 @@ public class Entity {
 	 *            to set in Entity
 	 */
 	public Entity(String name, int level, Point position, int health,
-			int wisdom, int agility, int strength) {
+			int wisdom, int agility, int strength, int experience) {
 		this.name = name;
 		this.level = level;
 		posX = position.x;
