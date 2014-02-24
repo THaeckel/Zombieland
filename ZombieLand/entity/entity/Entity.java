@@ -9,11 +9,16 @@ public class Entity {
 	 * name of Entity
 	 */
 	private final String name;
-
+ 
 	/**
-	 * Entity position
+	 * Entity X position
 	 */
-	private Point position;
+	private float posX;
+	
+	/**
+	 * Entity Y position
+	 */
+	private float posY;
 
 	/**
 	 * health points of the Entity
@@ -82,13 +87,14 @@ public class Entity {
 			int wisdom, int agility, int strength) {
 		this.name = name;
 		this.level = level;
-		this.position = position;
+		posX = position.x;
+		posY = position.y;
 		this.agility = agility;
 		this.wisdom = wisdom;
 		this.healthPoints = health;
 		this.strength = strength;
 
-		bounding = new Rectangle(getPosition().x, getPosition().y, 13, 23);
+		bounding = new Rectangle(position.x, position.y, 13, 23);
 		// spielergröße vorerst fest(13,23)
 	}
 
@@ -96,14 +102,27 @@ public class Entity {
 		return name;
 	}
 
-	public Point getPosition() {
-		return position;
+	public float getPosX(){
+		return posX;
+	}
+	
+	public void setPosX (float x){
+		posX = x;
 	}
 
-	public void setPosition(Point position) {
-		this.position = position;
+	public float getPosY(){
+		return posY;
 	}
-
+	
+	public void setPosY (float y){
+		posY = y;
+	}
+	
+	public void setPosition (float x, float y){
+		posX = x;
+		posY = y;
+	}
+	
 	public int getHealthPoints() {
 		return healthPoints;
 	}
