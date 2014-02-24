@@ -12,6 +12,8 @@ import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 
 import Player.Player;
+import controller.Game;
+import controller.Game.GameState;
 import controller.Keyboard;
 
 public class Screen extends JFrame {
@@ -27,6 +29,7 @@ public class Screen extends JFrame {
 	private BufferedImage background = null;
 	private BufferedImage map = null;
 	private BufferedImage playerBild = null;
+	private BufferedImage travelMap = null;
 
 	/**
 	 * for the canvas enxtendet container
@@ -65,6 +68,7 @@ public class Screen extends JFrame {
 			background = ImageIO.read(Screen.class.getResource("/Background.png"));
 			map = ImageIO.read(Screen.class.getResource("/MenuBackground.jpg"));
 			playerBild = ImageIO.read(Screen.class.getResource("/Jeff.png"));
+			travelMap = ImageIO.read(Screen.class.getResource("/Map.jpg"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -101,11 +105,24 @@ public class Screen extends JFrame {
 		// default backgroun...all times needed
 		g.drawImage(background, 0, 0, null);
 
-		// draw map
-		g.drawImage(map, (int)player.getPosX(), (int)player.getPosY(), this.getWidth(), this.getHeight(), null);
 		
-		// draw player
-		g.drawImage(playerBild, getWidth() / 2-20, getHeight() / 2-35, 25, 50,  null);
+		switch(Game.state){
+		case game:
+			// draw map
+			g.drawImage(map, (int)player.getPosX()-500, (int)player.getPosY()-500, this.getWidth(), this.getHeight(), null);
+			
+			// draw player
+			g.drawImage(playerBild, getWidth() / 2-20, getHeight() / 2-35, 25, 50,  null);
+			break;
+			
+		case travel:
+			g.drawImage(travelMap, 0, 0, null);
+			break;
+		default:
+			break;
+			
+		}
+		
 		
 	}
 

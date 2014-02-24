@@ -1,6 +1,7 @@
 package controller;
 
 import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 import view.Screen;
 import Player.Player;
@@ -34,6 +35,11 @@ public class Game {
 	ControlPlayer controlPlayer;
 
 	/**
+	 * Enum to switch between screens
+	 */
+	public static GameState state;
+
+	/**
 	 * player container
 	 */
 	Player player;
@@ -46,33 +52,85 @@ public class Game {
 		screen = new Screen(player, 1920, 1080);
 	}
 
+	/**
+	 * this methode contains the gameloop and handel the screens
+	 */
 	public void run() {
+		state = GameState.game;
 
 		controlPlayer = new ControlPlayer(player);
 		while (true) {
+
 			// calculate the speedmultiplier
 			thisFrame = System.currentTimeMillis();
 			timeSinceLastFrame = ((float) (thisFrame - lastFrame)) / 1000f;
 			lastFrame = thisFrame;
+
 			// changes
 			makeChanges();
 
 			// repaint
-			screen.repaintScreen();
+			render();
 
 			shortCuts();
-
 		}
 	}
 
+	/**
+	 * aktivates and look for changes whithin the last frame
+	 */
 	private void makeChanges() {
-		controlPlayer.updatePlayer(timeSinceLastFrame);
-	}
-
-	private void shortCuts() {
-		if (Keyboard.isKeyDown(KeyEvent.VK_ESCAPE)) {
-			System.exit(0);
+		switch (state) {
+		case game:
+			controlPlayer.updatePlayer(timeSinceLastFrame);
+			break;
+		case travel:
+			break;
+		default:
+			break;
 		}
 
 	}
+
+	/**
+	 * render the changes to the screen
+	 */
+	private void render() {
+		screen.repaintScreen();
+	}
+
+	/**
+	 * ths methode handle the shortCuts for map etc
+	 */
+	private void shortCuts() {
+		switch (state) {
+		case game:
+			if (Keyboard.isKeyDown(KeyEvent.VK_ESCAPE)) {
+				System.exit(0);
+			}
+			if (Keyboard.isKeyDown(KeyEvent.VK_M)){
+				state=GameState.travel;
+			}
+			break;
+		case travel:
+			if (Keyboard.isKeyDown(KeyEvent.VK_M)){
+				state=GameState.game;
+			}
+			break;
+		default:
+			break;
+		}
+
+	}
+
+	/**
+	 * enums to switch getween display modes
+	 * 
+	 * @author Mikko Eberhardt
+	 * 
+	 */
+	public static enum GameState {
+		game, map, travel;
+	}
+
 }
