@@ -33,27 +33,27 @@ public class ControlPlayer {
 		float dx = 0, dy = 0; // die Bewegung in x- bzw. y-Richtung
 		// north
 		if (Keyboard.isKeyDown(KeyEvent.VK_W)) {
-			dy -= SPEED * timeSinceLastFrame;
+			dy += SPEED * timeSinceLastFrame;
 		}
 
 		// south
 		if (Keyboard.isKeyDown(KeyEvent.VK_S)) {
-			dy += SPEED * timeSinceLastFrame;
+			dy -= SPEED * timeSinceLastFrame;
 		}
 
 		// east
 		if (Keyboard.isKeyDown(KeyEvent.VK_D)) {
-			dx += SPEED * timeSinceLastFrame;
+			dx -= SPEED * timeSinceLastFrame;
 		}
 
 		// west
 		if (Keyboard.isKeyDown(KeyEvent.VK_A)) {
-			dx -= SPEED * timeSinceLastFrame;
+			dx += SPEED * timeSinceLastFrame;
 		}
 
 		if (Math.sqrt(Math.pow(dx, 2) + Math.pow(dy, 2)) > (SPEED * timeSinceLastFrame)) {
-			dx = (float) Math.sqrt((dx * dx) / 2);
-			dy = dx;
+			dx = (float)(dx/Math.sqrt(2));
+			dy = (float)(dy/Math.sqrt(2)) ;
 		}
 		player.setPosition((player.getPosX() + dx), (player.getPosY() + dy));
 
