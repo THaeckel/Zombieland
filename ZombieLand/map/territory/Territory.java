@@ -26,6 +26,12 @@ public abstract class Territory {
 	 */
 	private String name;
 	
+	/**
+	 * Constructor
+	 * @param name to set
+	 * @param minLevel to set
+	 * @param maxLevel to set
+	 */
 	public Territory (String name, int minLevel, int maxLevel){
 		this.name = name;
 		this.maxLevel = maxLevel;
