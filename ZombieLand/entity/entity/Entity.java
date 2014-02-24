@@ -175,7 +175,7 @@ public class Entity {
 	public void sufferDamage(int damage) {
 		healthPoints -= damage;
 	}
-
+	
 	/**
 	 * getter for player Bounding
 	 */
