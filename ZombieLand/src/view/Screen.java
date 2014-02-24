@@ -105,7 +105,7 @@ public class Screen extends JFrame {
 		g.drawImage(map, player.getPosition().x, player.getPosition().y, this.getWidth(), this.getHeight(), null);
 		
 		// draw player
-		g.drawImage(playerBild, getWidth() / 2-20, getHeight() / 2-35, 39, 69,  null);
+		g.drawImage(playerBild, getWidth() / 2-20, getHeight() / 2-35, 25, 50,  null);
 		
 
 	}
