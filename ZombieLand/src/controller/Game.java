@@ -2,11 +2,11 @@ package controller;
 
 import java.awt.event.KeyEvent;
 
-import entity.Player;
 import view.Screen;
+import Player.Player;
 
 public class Game {
-	
+
 	/**
 	 * this variable save the time when the last frame starts
 	 */
@@ -22,47 +22,46 @@ public class Game {
 	 * your cpu the player runs with the same speed
 	 */
 	private float timeSinceLastFrame;
-	
+
 	/**
 	 * Screen variable
 	 */
 	Screen screen;
-	
+
 	/**
 	 * controller for changes of Player
 	 */
 	ControlPlayer controlPlayer;
-	
+
 	/**
 	 * player container
 	 */
 	Player player;
-	
+
 	/**
 	 * Construktor
 	 */
-	public Game(Player player){
-		this.player=player;
+	public Game(Player player) {
+		this.player = player;
 		screen = new Screen(player, 1920, 1080);
 	}
-	
-	public void run(){
-		
+
+	public void run() {
+
 		controlPlayer = new ControlPlayer(player);
-		while(true){
+		while (true) {
 			// calculate the speedmultiplier
 			thisFrame = System.currentTimeMillis();
 			timeSinceLastFrame = ((float) (thisFrame - lastFrame)) / 1000f;
 			lastFrame = thisFrame;
-			//changes
+			// changes
 			makeChanges();
-			
-			//repaint
+
+			// repaint
 			screen.repaintScreen();
-			
-			
+
 			shortCuts();
-			
+
 		}
 	}
 
@@ -71,9 +70,9 @@ public class Game {
 	}
 
 	private void shortCuts() {
-		if(Keyboard.isKeyDown(KeyEvent.VK_ESCAPE)){
+		if (Keyboard.isKeyDown(KeyEvent.VK_ESCAPE)) {
 			System.exit(0);
 		}
-		
+
 	}
 }
