@@ -2,6 +2,7 @@ package controller;
 
 import java.awt.Point;
 import java.awt.event.KeyEvent;
+import java.math.*;
 
 import Player.Player;
 
@@ -30,26 +31,34 @@ public class ControlPlayer {
 
 	public void updatePlayer(float timeSinceLastFrame){
 		
+		
+		/********* Spielerbewegung auf der Karte ***********************/
+		double dx = 0, dy = 0; // die Bewegung in x- bzw. y-Richtung
 		//north
 		if(Keyboard.isKeyDown(KeyEvent.VK_W)){
-			player.setPosition(new Point(player.getPosition().x, (int) (player.getPosition().y-(SPEED*timeSinceLastFrame))));
+			dy -= SPEED * timeSinceLastFrame;
 		}
 		
 		//south
 		if(Keyboard.isKeyDown(KeyEvent.VK_S)){
-			player.setPosition(new Point(player.getPosition().x, (int) (player.getPosition().y+(SPEED*timeSinceLastFrame))));
+			dy += SPEED * timeSinceLastFrame;
 		}
 		
 		//east
 		if(Keyboard.isKeyDown(KeyEvent.VK_D)){
-			player.setPosition(new Point((int) (player.getPosition().x+(SPEED*timeSinceLastFrame)), (player.getPosition().y)));
+			dx += SPEED * timeSinceLastFrame;
 		}
 		
 		//west
 		if(Keyboard.isKeyDown(KeyEvent.VK_A)){
-			player.setPosition(new Point((int) (player.getPosition().x-(SPEED*timeSinceLastFrame)), (player.getPosition().y)));
+			dx -= SPEED * timeSinceLastFrame;
 		}
 
+		if(Math.sqrt(Math.pow(dx, 2)+Math.pow(dy, 2))>(SPEED*timeSinceLastFrame)){
+			dx= Math.sqrt((dx*dx)/2);
+			dy=dx;
+		}
+		player.setPosition(new Point((int)(player.getPosition().x+dx), (int)(player.getPosition().y+dy)));
 		
 		
 	}
