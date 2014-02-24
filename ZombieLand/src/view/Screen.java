@@ -13,7 +13,6 @@ import javax.swing.JFrame;
 
 import Player.Player;
 import controller.Game;
-import controller.Game.GameState;
 import controller.Keyboard;
 
 public class Screen extends JFrame {
