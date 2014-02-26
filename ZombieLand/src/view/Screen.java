@@ -114,8 +114,11 @@ public class Screen extends JFrame {
 			
 			// draw player
 			g.drawImage(playerBild, getWidth() / 2-20, getHeight() / 2-35, 25, 50,  null);
+			
 			g.drawImage(schwert, 100, 100, 25, 25,  null);
 			g.drawImage(schwert, 100, 200, 50, 50,  null);
+			g.drawImage(schwert, 100, 300, 100, 100,  null);
+			g.drawImage(schwert, 100, 400, 150, 150,  null);
 			break;
 			
 		case travel:
