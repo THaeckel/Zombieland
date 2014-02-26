@@ -12,6 +12,11 @@ public class Item {
 	private String NAME;
 	
 	/**
+	 * id of the Item
+	 */
+	private int itemID;
+	
+	/**
 	 * Constructor
 	 * @param name of Item
 	 */
@@ -36,10 +41,24 @@ public class Item {
 		boolean equal = false;
 		if (obj instanceof Item) {
 			Item item = (Item) obj;
-			if (item.NAME == this.NAME) {
+			if (item.itemID == this.itemID && item.NAME.equals(this.NAME)) {
 				equal = true;
 			}
 		}
 		return equal;
+	}
+
+	/**
+	 * @return the itemID
+	 */
+	public int getItemID() {
+		return itemID;
+	}
+
+	/**
+	 * @param itemID the itemID to set
+	 */
+	public void setItemID(int itemID) {
+		this.itemID = itemID;
 	}
 }
