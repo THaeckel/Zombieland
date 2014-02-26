@@ -29,6 +29,7 @@ public class Screen extends JFrame {
 	private BufferedImage map = null;
 	private BufferedImage playerBild = null;
 	private BufferedImage travelMap = null;
+	private BufferedImage schwert = null;
 
 	/**
 	 * for the canvas enxtendet container
@@ -68,6 +69,7 @@ public class Screen extends JFrame {
 			map = ImageIO.read(Screen.class.getResource("/MenuBackground.jpg"));
 			playerBild = ImageIO.read(Screen.class.getResource("/Jeff.png"));
 			travelMap = ImageIO.read(Screen.class.getResource("/Map.jpg"));
+			schwert = ImageIO.read(Screen.class.getResource("/Holz schwert.png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -112,6 +114,8 @@ public class Screen extends JFrame {
 			
 			// draw player
 			g.drawImage(playerBild, getWidth() / 2-20, getHeight() / 2-35, 25, 50,  null);
+			g.drawImage(schwert, 100, 100, 25, 25,  null);
+			g.drawImage(schwert, 100, 200, 50, 50,  null);
 			break;
 			
 		case travel:
