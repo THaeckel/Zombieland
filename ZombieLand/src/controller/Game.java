@@ -32,6 +32,11 @@ public class Game {
 	 * controller for changes of Player
 	 */
 	ControlPlayer controlPlayer;
+	
+	/**
+	 * Maphandler
+	 */
+	TravelMap travelMap;
 
 	/**
 	 * Enum to switch between screens
@@ -58,6 +63,8 @@ public class Game {
 		state = GameState.game;
 
 		controlPlayer = new ControlPlayer(player);
+		travelMap = new TravelMap();
+		
 		while (true) {
 
 			// calculate the speedmultiplier
@@ -70,6 +77,8 @@ public class Game {
 
 			// repaint
 			render();
+			
+			
 
 			shortCuts();
 		}
