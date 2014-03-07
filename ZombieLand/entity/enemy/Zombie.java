@@ -22,10 +22,10 @@ public class Zombie extends EnemyEntity{
 	 * @param strength to set
 	 * @param experience to set
 	 */
-	public Zombie(int level, Point position, int health,
+	public Zombie(int id, int level, Point position, int health,
 			int wisdom, int agility, int strength, int experience) {
 		//--> berechnen der stats !!
-		super(("Zombie" + number), level, position, health, wisdom, agility, strength, experience);
+		super(id, ("Zombie" + number), level, position, health, wisdom, agility, strength, experience);
 		//--> random ausrüstung
 		
 		number ++;

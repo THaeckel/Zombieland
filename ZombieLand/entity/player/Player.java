@@ -30,8 +30,8 @@ public class Player extends Entity{
 	 * @param agility to set in Entity
 	 * @param strength to set in Entity
 	 */
-	public Player (String name, Point position, int health, int wisdom, int agility, int strength, int experience){
-		super (name,1, position, health, wisdom, agility, strength, experience);
+	public Player (int id, String name, Point position, int health, int wisdom, int agility, int strength, int experience){
+		super (id, name,1, position, health, wisdom, agility, strength, experience);
 	}
 	
 	/**

@@ -6,6 +6,11 @@ import java.awt.Rectangle;
 public class Entity {
 
 	/**
+	 * ID of Entity
+	 */
+	private final int entityID;
+	
+	/**
 	 * name of Entity
 	 */
 	private final String name;
@@ -20,6 +25,12 @@ public class Entity {
 	 */
 	private float posY;
 
+	/**
+	 * rotation of Player (order geographical cardinals)
+	 * N=1; NE=2; E=3; SE=4; S=5; SW=6; W=7; NW=8;
+	 */
+	private int rotation;
+	
 	/**
 	 * health points of the Entity
 	 */
@@ -83,8 +94,9 @@ public class Entity {
 	 * @param strength
 	 *            to set in Entity
 	 */
-	public Entity(String name, int level, Point position, int health,
+	public Entity(int id, String name, int level, Point position, int health,
 			int wisdom, int agility, int strength, int experience) {
+		this.entityID = id;
 		this.name = name;
 		this.level = level;
 		posX = position.x;
@@ -200,5 +212,26 @@ public class Entity {
 	 */
 	public Rectangle getBounding() {
 		return bounding;
+	}
+
+	/**
+	 * @return the rotation
+	 */
+	public int getRotation() {
+		return rotation;
+	}
+
+	/**
+	 * @param rotation the rotation to set
+	 */
+	public void setRotation(int rotation) {
+		this.rotation = rotation;
+	}
+
+	/**
+	 * @return the entityID
+	 */
+	public int getEntityID() {
+		return entityID;
 	}
 }
